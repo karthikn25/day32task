@@ -31,7 +31,7 @@ function App() {
    <Route exact path="/">
    <Dashboard/>
    </Route>
-   <Route path="/add-book">
+   <Route path="/addbook">
    <AddBook
    book={book}
    setBook={setBook}
@@ -44,7 +44,7 @@ function App() {
    editBook={editBook}
    />
    </Route>
-   <Route path="/book-list">
+   <Route path="/books">
    <Booklist
    book={book}
    setBook={setBook}
