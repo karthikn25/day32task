@@ -58,7 +58,7 @@ if(data){
   console.log(updatedObject)
   book[id]=updatedObject
   setBook([...book])
-  history.push("/book-list") 
+  history.push("/books") 
  }}
   
   
