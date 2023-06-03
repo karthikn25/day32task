@@ -7,62 +7,60 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { faBook } from "@fortawesome/free-solid-svg-icons";
 
 
 
-function Users({user,setUser}){
+function Booklist({book,setBook}){
   const history=useHistory(""); 
-  //delete operation of Users
-  const deleteUser=async (usId)=>{
-
-    const response=await fetch(`https://644b33c04bdbc0cc3a8ce2dd.mockapi.io/Users/${usId}`,{
-     method:"DELETE",
+  //delete operation of Books
+  const deleteBook=async (bokId)=>{
+   console.log(bokId)
+    const response=await fetch(`https://644b33c04bdbc0cc3a8ce2dd.mockapi.io/Users/${bokId}` , {
+     method:"DELETE"
      
     });
     const data=await response.json()
 if(data){
-     const remainingUser=user.filter((us,idx)=>us.id!== usId)
-     setUser(remainingUser)
+     const remainingBooks=book.filter((bok,idx)=>bok.id!== bokId)
+     setBook(remainingBooks)
 }
  }
 
   return(
       <Base>
-        <h1 style={{color:"darkgray",textAlign:"center"}}>Users</h1>
+        <h1 style={{color:"darkgray",textAlign:"center"}}>Books</h1>
         <Divider variant="middle" />
-        <h2 style={{textAlign:"center"}}>The Users Of The User Friendly Application</h2>
+        <h2 style={{textAlign:"center"}}>Available Books of This Library</h2>
         <Divider variant="middle" />
         
         
         <div className="container">
       
         <div className="card-container">
-           {user.map((us,idx)=>(
+           {book.map((bok,idx)=>(
             
             <div className="stud-card" key={idx}>
             <Card sx={{ maxWidth: 345 }}>
-            <FontAwesomeIcon  style={{fontSize:"xx-large"}} icon={faUser}/>
+            <FontAwesomeIcon icon={faBook}  style={{fontSize:"xx-large"}}/>
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-          {us.name}
+          {bok.name}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-          {us.position}
+          {bok.author}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-          {us.gender}
+          {bok.line}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-          {us.age}
+          {bok.order}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-          {us.phone}
-          </Typography>
+       
         </CardContent>
         <div className="control">
           <Button size="small" onClick={()=>history.push(`edit/${idx}`)}>Update</Button>{" "}
-          <Button size="small" onClick={()=>deleteUser(us.id)}>Log Out</Button>
+          <Button size="small" onClick={()=>deleteBook(bok.id)}>Delete</Button>
           </div>
       </Card>
                
@@ -82,4 +80,4 @@ if(data){
 }
 
 
-export default Users
+export default Booklist

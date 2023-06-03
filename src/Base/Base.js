@@ -16,9 +16,9 @@ function Base({children}){
         <div className="nav-bar">
         <a href="" style={{fontSize:"20px",color:"white"}} onClick={()=>history.push("/")}>Dashboard</a>
         <Divider variant="middle" />
-        <a href="" style={{fontSize:"20px",color:"white"}} onClick={()=>history.push("/login")}>Login</a>
+        <a href="" style={{fontSize:"20px",color:"white"}} onClick={()=>history.push("/add-book")}>Adding Book</a>
         <Divider variant="middle" />
-       <a href="" style={{fontSize:"20px",color:"white"}} onClick={()=>history.push("/users")}>Users</a>
+       <a href="" style={{fontSize:"20px",color:"white"}} onClick={()=>history.push("/book-list")}>Books </a>
       
        </div>
         </div>

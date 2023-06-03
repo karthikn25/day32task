@@ -173,7 +173,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
           component="div"
           sx={{ display: { xs: 'none', sm: 'block' } }}
         >
-          UFAPP
+          LMA
         </Typography>
         <Search>
           <SearchIconWrapper>

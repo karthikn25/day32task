@@ -12,37 +12,37 @@ import { useHistory,useParams } from "react-router-dom";
 
 
 
-function Updation({user,setUser}){
+function Updation({book,setBook}){
   const{id}=useParams();
-  const editUser = user[id];  
+  const editBook = book[id];  
   const [name,setName]=useState("");
-  const [position,setPosition]=useState("");
-  const [gender,setGender]=useState("");
-  const [age,setAge]=useState("");
-  const [phone,setPhone]=useState("");
+  const [author,setAuthor]=useState("");
+  const [line,setLine]=useState("");
+  const [order,setOrder]=useState("");
+ 
   const history=useHistory("");
 
   useEffect(()=>{
-    setName(editUser.name)
-    setPosition(editUser.position)
-    setGender(editUser.gender)
-    setAge(editUser.age)
-    setPhone(editUser.phone)
+    setName(editBook.name)
+    setAuthor(editBook.author)
+    setLine(editBook.line)
+    setOrder(editBook.order)
+    
     
     console.log("id is",id)
-  },[editUser])
+  },[editBook])
 
-  async function updateUser(){
+  async function updateBook(){
    
     const updatedObject ={
       name : name,
-      position : position,
-      gender : gender,
-      age : age,
-      phone : phone
+      author : author,
+      line : line,
+      order : order
+      
     }
 
-    const response=await fetch(`https://644b33c04bdbc0cc3a8ce2dd.mockapi.io/Users/${editUser.id}`,{
+    const response=await fetch(`https://644b33c04bdbc0cc3a8ce2dd.mockapi.io/Users/${editBook.id}`,{
   method:"PUT",
   body:JSON.stringify(updatedObject),
   headers:{
@@ -56,15 +56,15 @@ const data=await response.json()
 
 if(data){
   console.log(updatedObject)
-  user[id]=updatedObject
-  setUser([...user])
-  history.push("/users") 
+  book[id]=updatedObject
+  setBook([...book])
+  history.push("/book-list") 
  }}
   
   
   return(
         <Base>
-        <h1 style={{color:"darkgray",textAlign:"center"}}>Updation</h1>
+        <h1 style={{color:"darkgray",textAlign:"center"}}>Update book</h1>
         <Divider variant="middle" />
         <div className="login-page">
         <FormControl fullWidth sx={{ m: 0 }}>
@@ -80,56 +80,45 @@ if(data){
         </FormControl>
         <br/>
         <FormControl fullWidth sx={{ m: 0 }}>
-        <InputLabel htmlFor="outlined-adornment-amount">Position</InputLabel>
+        <InputLabel htmlFor="outlined-adornment-amount">Author</InputLabel>
         <OutlinedInput
           id="outlined-adornment-amount"
           startAdornment={<InputAdornment position="start"></InputAdornment>}
           label="Amount"
           type="text"
-          value={position}
-          onChange={(e) => setPosition(e.target.value)}
+          value={author}
+          onChange={(e) => setAuthor(e.target.value)}
         />
       </FormControl>
       <br/>
       <FormControl fullWidth sx={{ m: 0 }}>
-      <InputLabel htmlFor="outlined-adornment-amount">Gender</InputLabel>
+      <InputLabel htmlFor="outlined-adornment-amount">Line</InputLabel>
       <OutlinedInput
         id="outlined-adornment-amount"
         startAdornment={<InputAdornment position="start"></InputAdornment>}
         label="Amount"
-        type="text"
-        value={gender}
-        onChange={(e) => setGender(e.target.value)}
+        type="number"
+        value={line}
+        onChange={(e) => setLine(e.target.value)}
       />
     </FormControl>
     <br/>
     <FormControl fullWidth sx={{ m: 0 }}>
-    <InputLabel htmlFor="outlined-adornment-amount">Age</InputLabel>
+    <InputLabel htmlFor="outlined-adornment-amount">Order</InputLabel>
     <OutlinedInput
       id="outlined-adornment-amount"
       startAdornment={<InputAdornment position="start"></InputAdornment>}
       label="Amount"
       type="number"
-      value={age}
-      onChange={(e) => setAge(e.target.value)}
+      value={order}
+      onChange={(e) => setOrder(e.target.value)}
     />
   </FormControl>
   <br/>
 
 <br/>
-<FormControl fullWidth sx={{ m: 0 }}>
-<InputLabel htmlFor="outlined-adornment-amount">Phone No</InputLabel>
-<OutlinedInput
-  id="outlined-adornment-amount"
-  startAdornment={<InputAdornment position="start"></InputAdornment>}
-  label="Amount"
-  type="text"
-  value={phone}
-  onChange={(e) => setPhone(e.target.value)}
-/>
-</FormControl>
-<br/><Button variant="contained"  onClick={updateUser} href="" style={{width:"20vw",marginLeft:"15vw"}}>
-Update
+<Button variant="contained"  onClick={updateBook} href="" style={{width:"20vw",marginLeft:"15vw"}}>
+Update 
 </Button>
         </div>
         </Base>

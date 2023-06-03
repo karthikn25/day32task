@@ -1,72 +1,73 @@
 const data = [
   {
-    "name": "person1",
-    "position": "FrontEnd-Developer",
-    "gender": "Male",
-    "age": "23",
-    "phone": "12345"
+    "name": "Wings Of Fire",
+    "author": "A.P.J.Abdulkalam",
+    "line": "02",
+    "order": "04",
+    "id":"0"
+    
   },
   {
-    "name": "person2",
-    "position": "BackEnd-Developer",
-    "gender": "Female",
-    "age": "22",
-    "phone": "23451"
+    "name": "Ponniyin Selvan",
+    "author": "Kalki",
+    "line": "07",
+    "order": "10",
+    "id":"1"
   },
   {
-    "name": "person3",
-    "position": "FrontEnd-Developer",
-    "gender": "Female",
-    "age": "23",
-    "phone": "34512"
+    "name": "Julius Ceaser",
+    "author": "William Shakshpear",
+    "line": "09",
+    "order": "08",
+    "id":"2"
   },
   {
-    "name": "person4",
-    "position": "BackEnd-Developer",
-    "gender": "Male",
-    "age": "25",
-    "phone": "45123"
+    "name": "The Auto Bio-Graphy",
+    "author": "Gandhi",
+    "line": "02",
+    "order": "04",
+    "id":"3"
   },
   {
-    "name": "person5",
-    "position": "FrontEnd-Developer",
-    "gender": "Male",
-    "age": "29",
-    "phone": "51234"
+    "name": "Encyclopedia",
+    "author": "Jonthan Edwards",
+    "line": "01",
+    "order": "01",
+    "id":"4"
   },
   {
-    "name": "person6",
-    "position": "BackEnd-Developer",
-    "gender": "Female",
-    "age": "29",
-    "phone": "23145"
+    "name": "Thirukkural",
+    "author": "Thiruvalluvar",
+    "line": "02",
+    "order": "01",
+    "id":"5"
   },
   {
-    "name": "person7",
-    "position": "FullStack-Developer",
-    "gender": "Male",
-    "age": "35",
-    "phone": "23415"
+    "name": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "line": "09",
+    "order": "07",
+    "id":"6"
   },
   {
-    "name": "person8",
-    "position": "FullStack-Developer",
-    "gender": "Female",
-    "age": "30",
-    "phone": "13425"
+    "name": "Anna Karenina",
+    "author": "Leo Tolstoy",
+    "line": "08",
+    "order": "06",
+    "id":"7"
   },
   {
-    "name": "person9",
-    "position": "FullStack-Developer",
-    "gender": "Female",
-    "age": "32",
-    "phone": "14325"
+    "name": "War and Peace",
+    "author": "Leo Tolstoy",
+    "line": "08",
+    "order": "07",
+    "id":"8"
   },
   {
-    "name": "person10",
-    "position": "FrontEnd-Developer",
-    "gender": "Male",
-    "age": "23",
-    "phone": "14235"
+    "name": "Heart of Darkness",
+    "author": "Joseph Conrad",
+    "line": "10",
+    "order": "07",
+    "id":"9"
   }
 ];

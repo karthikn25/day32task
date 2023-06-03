@@ -2,26 +2,26 @@ import './App.css';
 import { useState,useEffect } from 'react';
 import { Route,Switch } from 'react-router-dom';
 import Dashboard from './Component/Dashboard';
-import Login from './Component/Login';
+import AddBook from "./Component/AddBook"
 import Updation from './Component/Updation';
-import Users from './Component/Users';
+import Booklist from "./Component/Booklist"
 
 
 
 function App() {
-  const [user,setUser]=useState([]);
-  const [editUser,setEditUser]=useState({})
+  const [book,setBook]=useState([]);
+  const [editBook,setEditBook]=useState({})
   useEffect(()=>{
-    const getUsers= async ()=>{
+    const getBook= async ()=>{
     const response=await fetch("https://644b33c04bdbc0cc3a8ce2dd.mockapi.io/Users",{
       method:"GET",
     });
     const data=await response.json();
     if(data){
-      setUser(data)
+      setBook(data)
     }
     }
-    getUsers();
+    getBook();
     },[])
   return (
     <div className="App">
@@ -31,24 +31,24 @@ function App() {
    <Route exact path="/">
    <Dashboard/>
    </Route>
-   <Route path="/login">
-   <Login
-   user={user}
-   setUser={setUser}
+   <Route path="/add-book">
+   <AddBook
+   book={book}
+   setBook={setBook}
    />
    </Route>
    <Route path="/edit/:id">
    <Updation
-   user={user}
-   setUser={setUser}
-   editUser={editUser}
+   book={book}
+   setBook={setBook}
+   editBook={editBook}
    />
    </Route>
-   <Route path="/users">
-   <Users
-   user={user}
-   setUser={setUser}
-   setEditUser={setEditUser}
+   <Route path="/book-list">
+   <Booklist
+   book={book}
+   setBook={setBook}
+   setEditBook={setEditBook}
    />
    </Route>
   

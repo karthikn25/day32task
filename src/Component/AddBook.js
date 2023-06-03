@@ -12,47 +12,47 @@ import { useFormik } from "formik";
 
 export const filedValidationSchema = yup.object({
   name : yup.string().required("Please fill in name"),
-  position : yup.string().required("Please fill in the Position"),
-  gender:yup.string().required("Please fill your gender"),
-  age : yup.number().required("Please fill your Age"),
-  phone : yup.string().required("Please Fill your mobile number").min(5,"Please fill the valid number")
+  author : yup.string().required("Please fill in the Author"),
+  line:yup.number().required("Please fill the line"),
+  order : yup.number().required("Please fill the Order"),
+  
 
  })
 
 
-function Login({user,setUser}){
+function AddBook({book,setBook}){
             
     const {handleSubmit,values,handleChange,handleBlur,touched,errors} = useFormik({
       initialValues : {
         name:"",
-        position:"",
-        gender:"",
-        age:"",
-        phone:""
+        author:"",
+        line:"",
+        order:"",
+       
       },
       validationSchema : filedValidationSchema,
-      onSubmit : (newUserData)=>{
-        console.log("onsubmit",newUserData)
-        createUser(newUserData)
+      onSubmit : (newBook)=>{
+        console.log("onsubmit",newBook)
+        createBook(newBook)
       }
 
     })
   
             // const [name,setName]=useState("");
-            // const [position,setPosition]=useState("");
-            // const [gender,setGender]=useState("");
-            // const [age,setAge]=useState("");
+            // const [author,setauthor]=useState("");
+            // const [line,setGender]=useState("");
+            // const [order,setAge]=useState("");
             // const [phone,setPhone]=useState("");
             const history=useHistory("");
             
        
            
-            const createUser = async (newUser) =>{
-                // const newUsers={
+            const createBook = async (newBook) =>{
+                // const newbooks={
                 //   name:name,
-                //   position:position,
-                //   gender:gender,
-                //   age:age,
+                //   author:author,
+                //   line:line,
+                //   order:order,
                 //   phone:phone
                 // }
               
@@ -60,19 +60,19 @@ function Login({user,setUser}){
               
               const response=await fetch("https://644b33c04bdbc0cc3a8ce2dd.mockapi.io/Users",{
                   method:"POST",
-                  body:JSON.stringify(newUser),
+                  body:JSON.stringify(newBook),
                   headers:{
                     "Content-Type":"application/json"
                   },
                 })
               const data=await response.json()
-             setUser([...user,data])
-             history.push("/users");
+             setBook([...book,data])
+             history.push("/book-list");
              }  
   
   return(
         <Base>
-        <h1 style={{color:"darkgray",textAlign:"center"}}>Login</h1>
+        <h1 style={{color:"darkgray",textAlign:"center"}}>AddBook</h1>
         <Divider variant="middle" />
         <div className="login-page">
         <form onSubmit={handleSubmit}>
@@ -82,7 +82,7 @@ function Login({user,setUser}){
           >Name</InputLabel>
           <OutlinedInput
             id="outlined-adornment-amount"
-            startAdornment={<InputAdornment position="start"></InputAdornment>}
+            startAdornment={<InputAdornment author="start"></InputAdornment>}
             label="Amount"
             name="name"
             type="name"
@@ -96,74 +96,58 @@ function Login({user,setUser}){
         <FormControl fullWidth sx={{ m: 0 }}>
         <InputLabel htmlFor="outlined-adornment-amount"
       
-        >Position</InputLabel>
+        >Author</InputLabel>
         <OutlinedInput
           id="outlined-adornment-amount"
-          startAdornment={<InputAdornment position="start"></InputAdornment>}
+          startAdornment={<InputAdornment author="start"></InputAdornment>}
           label="Amount"
-          name="position"
-          type="position"
-          value={values.position}
+          name="author"
+          type="author"
+          value={values.author}
           onBlur={handleBlur}
           onChange={handleChange}
         />
       </FormControl>
-      <div style={{color:"crimson"}}>{touched.position && errors ? errors.position:""}</div>
+      <div style={{color:"crimson"}}>{touched.author && errors ? errors.author:""}</div>
       <br/><br/>
       <FormControl fullWidth sx={{ m: 0 }}>
       <InputLabel htmlFor="outlined-adornment-amount"
      
-      >Gender</InputLabel>
+      >Line</InputLabel>
       <OutlinedInput
         id="outlined-adornment-amount"
-        startAdornment={<InputAdornment position="start"></InputAdornment>}
+        startAdornment={<InputAdornment author="start"></InputAdornment>}
         label="Amount"
-        name="gender"
-        type="gender"
-        value={values.gender}
+        name="line"
+        type="line"
+        value={values.line}
         onBlur={handleBlur}
         onChange={handleChange}
       />
     </FormControl>
-    <div style={{color:"crimson"}}>{touched.gender && errors ? errors.gender:""}</div>
+    <div style={{color:"crimson"}}>{touched.line && errors ? errors.line:""}</div>
     <br/><br/>
     <FormControl fullWidth sx={{ m: 0 }}>
     <InputLabel htmlFor="outlined-adornment-amount"
     
-    >Age</InputLabel>
+    >Order</InputLabel>
     <OutlinedInput
       id="outlined-adornment-amount"
-      startAdornment={<InputAdornment position="start"></InputAdornment>}
+      startAdornment={<InputAdornment author="start"></InputAdornment>}
       label="Amount"
-      name="age"
-      type="age"
-    value={values.age}
+      name="order"
+      type="order"
+    value={values.order}
     onBlur={handleBlur}
     onChange={handleChange}
     />
   </FormControl>
-  <div style={{color:"crimson"}}>{touched.age && errors ? errors.age:""}</div>
+  <div style={{color:"crimson"}}>{touched.order && errors ? errors.order:""}</div>
   <br/><br/>
 
 <br/>
-<FormControl fullWidth sx={{ m: 0 }}>
-<InputLabel htmlFor="outlined-adornment-amount"
-
->Phone No</InputLabel>
-<OutlinedInput
-  id="outlined-adornment-amount"
-  startAdornment={<InputAdornment position="start"></InputAdornment>}
-  label="Amount"
-  name="phone"
-  type="phone"
-value={values.phone}
-onBlur={handleBlur}
-onChange={handleChange}
-/>
-</FormControl>
-<div style={{color:"crimson"}}>{touched.phone && errors ? errors.phone:""}</div>
-<br/><br/><Button variant="contained" type="submit"  href="" style={{width:"15vw",marginLeft:"2vw"}}>
-Login
+<Button variant="contained" type="submit"  href="" style={{width:"15vw",marginLeft:"2vw"}}>
+AddBook
 </Button></form>
         </div>
         </Base>
@@ -171,4 +155,4 @@ Login
 }
 
 
-export default Login
+export default AddBook

@@ -10,7 +10,7 @@ function Dashboard(){
     <Base>
     <h1 style={{color:"darkgray",textAlign:"center"}}>Dashboard</h1>
     <Divider variant="middle" />
-    <h2 style={{textAlign:"center"}}>Welcome To User Friendly Application</h2>
+    <h2 style={{textAlign:"center"}}>Welcome To  Library Management Application</h2>
     <Divider variant="middle" />
     <div className="das-icon"><FontAwesomeIcon icon={faPaperPlane} /></div>
     
