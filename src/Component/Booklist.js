@@ -38,8 +38,7 @@ if(data){
         <div className="container">
       
         <div className="card-container">
-           {book.map((bok,idx)=>(
-            
+          {book.map((bok,idx)=>(
             <div className="stud-card" key={idx}>
             <Card sx={{ maxWidth: 345 }}>
             <FontAwesomeIcon icon={faBook}  style={{fontSize:"xx-large"}}/>
@@ -63,14 +62,16 @@ if(data){
           <Button size="small" onClick={()=>deleteBook(bok.id)}>Delete</Button>
           </div>
       </Card>
-               
-               
-               
             
-               
-               
-             </div>
-           ))}
+            
+            
+            
+            
+            
+            
+            
+            </div>
+          ))}
         </div>
         </div>
          

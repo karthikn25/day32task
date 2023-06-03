@@ -67,7 +67,7 @@ function AddBook({book,setBook}){
                 })
               const data=await response.json()
              setBook([...book,data])
-             history.push("/book-list");
+             history.push("/books");
              }  
   
   return(

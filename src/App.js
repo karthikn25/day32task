@@ -4,7 +4,8 @@ import { Route,Switch } from 'react-router-dom';
 import Dashboard from './Component/Dashboard';
 import AddBook from "./Component/AddBook"
 import Updation from './Component/Updation';
-import Booklist from "./Component/Booklist"
+import Booklist from "./Component/Booklist";
+import Error from './Component/Error';
 
 
 
@@ -31,7 +32,7 @@ function App() {
    <Route exact path="/">
    <Dashboard/>
    </Route>
-   <Route path="/add-book">
+   <Route path="/addbook">
    <AddBook
    book={book}
    setBook={setBook}
@@ -44,12 +45,15 @@ function App() {
    editBook={editBook}
    />
    </Route>
-   <Route path="/book-list">
+   <Route path="/books">
    <Booklist
    book={book}
    setBook={setBook}
    setEditBook={setEditBook}
    />
+   </Route>
+   <Route path="/**">
+   <Error/>
    </Route>
   
    
