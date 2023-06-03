@@ -52,7 +52,7 @@ function App() {
    setEditBook={setEditBook}
    />
    </Route>
-   <Route path="/**">
+   <Route path="**">
    <Error/>
    </Route>
   
