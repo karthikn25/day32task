@@ -2,6 +2,7 @@ import React from "react";
 import { Topbar } from "../Component/Topbar";
 import { useHistory,useParams } from "react-router-dom";
 import Divider from '@mui/material/Divider';
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 
 function Base({children}){
@@ -14,11 +15,11 @@ function Base({children}){
         </div>
         <div className="left-bar">
         <div className="nav-bar">
-        <a href="" style={{fontSize:"20px",color:"white"}} onClick={()=>history.push("/")}>Dashboard</a>
-        <Divider variant="middle" />
-        <a href="" style={{fontSize:"20px",color:"white"}} onClick={()=>history.push("/addbook")}>Adding Book</a>
-        <Divider variant="middle" />
-       <a href="" style={{fontSize:"20px",color:"white"}} onClick={()=>history.push("/books")}>Books </a>
+        <Link to="/" style={{fontSize:"20px",color:"white"}} onClick={()=>history.push("/")}>Dashboard</Link> 
+        <Divider variant="middle" /> 
+        <Link to="/addbook" style={{fontSize:"20px",color:"white"}} onClick={()=>history.push("/addbook")}>Adding Book</Link>
+         <Divider variant="middle" /> 
+         <Link to="/books" style={{fontSize:"20px",color:"white"}} onClick={()=>history.push("/books")}>Books </Link>
       
        </div>
         </div>
