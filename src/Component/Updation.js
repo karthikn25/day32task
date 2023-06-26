@@ -75,7 +75,7 @@ if(data){
             label="Amount"
             type="text" 
             value={name}
-            onChange={(e) => setName(e.target.value)}
+         
           />
         </FormControl>
         <br/>
@@ -87,7 +87,7 @@ if(data){
           label="Amount"
           type="text"
           value={author}
-          onChange={(e) => setAuthor(e.target.value)}
+          
         />
       </FormControl>
       <br/>

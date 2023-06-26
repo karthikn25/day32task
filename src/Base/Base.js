@@ -1,13 +1,13 @@
 import React from "react";
 import { Topbar } from "../Component/Topbar";
-import { useHistory,useParams } from "react-router-dom";
+import { useHistory} from "react-router-dom";
 import Divider from '@mui/material/Divider';
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 
 function Base({children}){
     const history=useHistory("");
-    const{id}=useParams();
+    
      return(
         <div className="base-design">
         <div className="top-bar">

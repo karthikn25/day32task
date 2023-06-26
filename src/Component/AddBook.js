@@ -38,24 +38,13 @@ function AddBook({book,setBook}){
 
     })
   
-            // const [name,setName]=useState("");
-            // const [author,setauthor]=useState("");
-            // const [line,setGender]=useState("");
-            // const [order,setAge]=useState("");
-            // const [phone,setPhone]=useState("");
+  
             const history=useHistory("");
             
        
            
             const createBook = async (newBook) =>{
-                // const newbooks={
-                //   name:name,
-                //   author:author,
-                //   line:line,
-                //   order:order,
-                //   phone:phone
-                // }
-              
+             
               
               
               const response=await fetch("https://644b33c04bdbc0cc3a8ce2dd.mockapi.io/Users",{
